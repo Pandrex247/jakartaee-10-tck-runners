@@ -20,8 +20,12 @@
 
     </properties>
 
-    <!-- needed for servlet 6.0, concurrent 3.0 -->
+
     <repositories>
+        <repository>
+            <id>jakarta-releases</id>
+            <url>https://jakarta.oss.sonatype.org/content/repositories/releases/</url>
+        </repository>
         <repository>
             <id>staged-jakarta-releases</id>
             <url>https://jakarta.oss.sonatype.org/content/groups/staging/</url>
@@ -46,13 +50,13 @@
         <dependency>
             <groupId>jakarta.enterprise.concurrent</groupId>
             <artifactId>jakarta.enterprise.concurrent-tck</artifactId>
-            <version>3.0.1</version>
+            <version>3.0.2</version>
         </dependency>
         <!-- APIs -->
         <dependency>
             <groupId>jakarta.enterprise.concurrent</groupId>
             <artifactId>jakarta.enterprise.concurrent-api</artifactId>
-            <version>3.0.1</version>
+            <version>3.0.2</version>
         </dependency>
         <dependency>
             <groupId>jakarta.servlet</groupId>
