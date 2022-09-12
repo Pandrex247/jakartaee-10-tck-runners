@@ -18,7 +18,5 @@ echo "Running TCK"
 cp pom.xml-tck target/faces-tck-4.0.1/tck/pom.xml
 # change usage of glassfish with payara
 cp pom.xml-old-tck-run target/faces-tck-4.0.1/tck/old-tck/run/pom.xml
-#mvn clean install -P payara-ci-remote,\!glassfish-ci-managed -Dglassfish.version=7.0.0-M4 -f target/faces-tck-4.0.1/tck/pom.xml
-mvn clean install -P payara-ci-remote,\!glassfish-ci-managed -Dglassfish.version=6.2022.1.Alpha4 -f target/faces-tck-4.0.1/tck/pom.xml -N
-mvn clean install -P payara-ci-remote,\!glassfish-ci-managed -Dglassfish.version=6.2022.1.Alpha4 -f target/faces-tck-4.0.1/tck/old-tck/pom.xml
+mvn clean install -P payara-ci-remote,\!glassfish-ci-managed -Dglassfish.version=6.2022.1.Alpha4 -f target/faces-tck-4.0.1/tck/pom.xml
 
