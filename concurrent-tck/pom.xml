@@ -224,7 +224,7 @@
                             <executable>${payara.asadmin}</executable>
                             <arguments>
                                 <argument>create-system-properties</argument>
-                                <argument>jimage.dir=${project.build.outputDirectory}${file.separator}jimage</argument>
+                                <argument>jimage.dir='${project.build.outputDirectory}${file.separator}jimage'</argument>
                             </arguments>
                         </configuration>
                     </execution>
@@ -283,6 +283,9 @@
                             <dependenciesToScan>
                                 <dependency>jakarta.enterprise.concurrent:jakarta.enterprise.concurrent-tck</dependency>
                             </dependenciesToScan>
+                            <includes>
+                                <include>*</include>
+                            </includes>
                         </configuration>
                     </execution>
                     <execution>
