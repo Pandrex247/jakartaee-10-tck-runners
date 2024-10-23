@@ -89,7 +89,6 @@
         <shrinkwrap.descriptors.version>2.0.0</shrinkwrap.descriptors.version>
 
         <!-- Jakarta EE versions -->
-        <jakarta-annotations-tck.version>2.1.1</jakarta-annotations-tck.version>
         <jakarta-authorization-tck.version>2.1.0</jakarta-authorization-tck.version>
         <jakarta-rest-tck.version>3.1.5</jakarta-rest-tck.version>
         <jakarta.tck.sigtest-maven-plugin.version>2.2</jakarta.tck.sigtest-maven-plugin.version>
@@ -97,7 +96,6 @@
         <jakarta.tck.websocket.version>2.1.0</jakarta.tck.websocket.version>
         <jakarta.tck.bean-validation.version>3.0.1</jakarta.tck.bean-validation.version>
         <jakarta.tck.pages.version>3.1.0</jakarta.tck.pages.version>
-        <jakarta.tck.persistence.version>3.1.6</jakarta.tck.persistence.version>
         <jakarta.tck.cdi.version>4.0.13</jakarta.tck.cdi.version>
         <cdi.api.version>4.1.0</cdi.api.version>
         <jakarta.tck.servlet.version>6.0.2</jakarta.tck.servlet.version>
