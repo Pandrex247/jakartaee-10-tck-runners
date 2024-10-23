@@ -29,13 +29,12 @@
                         <goals>
                             <goal>wget</goal>
                         </goals>
+                        <configuration>
+                            <url>${tck.download.url}</url>
+                            <unpack>true</unpack>
+                        </configuration>
                     </execution>
                 </executions>
-                <configuration>
-                    <url>${tck.download.url}</url>
-                    <unpack>true</unpack>
-                    <outputDirectory>${project.build.directory}</outputDirectory>
-                </configuration>
             </plugin>
             <plugin>
                 <artifactId>maven-install-plugin</artifactId>
@@ -47,12 +46,9 @@
                             <goal>install-file</goal>
                         </goals>
                         <configuration>
-                            <generatePom>true</generatePom>
-                            <groupId>jakarta.ws.rs</groupId>
-                            <artifactId>jakarta-restful-ws-tck</artifactId>
-                            <version>${jakarta-rest-tck.version}</version>
-                            <file>${project.build.directory}${file.separator}restful-ws-tck${file.separator}artifacts${file.separator}${tck.basename}.jar</file>
-                            <sources>${project.build.directory}${file.separator}restful-ws-tck${file.separator}artifacts${file.separator}${tck.basename}-sources.jar</sources>
+                            <file>${project.build.directory}${file.separator}${tck.basename}.jar</file>
+                            <pomFile>${project.build.directory}${file.separator}${tck.basename}.pom</pomFile>
+                            <sources>${project.build.directory}${file.separator}${tck.basename}-sources.jar</sources>
                         </configuration>
                     </execution>
                 </executions>
