@@ -144,7 +144,6 @@
         <module>summarizer</module>
         <module>expression-language-tck</module>
         <module>bean-validation-tck</module>
-        <module>persistence-tck</module>
     </modules>
 
     <dependencyManagement>

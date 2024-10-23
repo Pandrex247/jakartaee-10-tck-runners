@@ -40,7 +40,6 @@
         <module>jakarta-tags-tck</module>
         <module>jakarta-websocket-tck</module>
         <module>jakarta-validation-tck</module>
-        <module>jakarta-persistence-tck</module>
         <module>jakarta-cdi-tck</module>
         <module>jakarta-jsonp-tck</module>
         <module>jakarta-jsonb-tck</module>
