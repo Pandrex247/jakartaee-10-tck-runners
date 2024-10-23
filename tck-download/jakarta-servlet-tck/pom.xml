@@ -34,7 +34,6 @@
                         <phase>generate-resources</phase>
                         <configuration>
                             <url>${tck.tests.servlet.url}</url>
-                            <unpack>true</unpack>
                         </configuration>
                     </execution>
                 </executions>
@@ -43,45 +42,17 @@
                 <artifactId>maven-install-plugin</artifactId>
                 <executions>
                     <execution>
-                        <id>install-servlet-tck-pom</id>
+                        <id>install-servlet-tck</id>
                         <phase>process-resources</phase>
                         <goals>
                             <goal>install-file</goal>
                         </goals>
                         <configuration>
-                            <file>${project.build.directory}${file.separator}servlet-tck${file.separator}artifacts${file.separator}servlet-tck-${jakarta.tck.servlet.version}.pom</file>
-                            <groupId>jakarta.tck</groupId>
-                            <artifactId>servlet-tck</artifactId>
-                            <version>${jakarta.tck.servlet.version}</version>
-                            <packaging>pom</packaging>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>install-servlet-tck-runtime</id>
-                        <phase>process-resources</phase>
-                        <goals>
-                            <goal>install-file</goal>
-                        </goals>
-                        <configuration>
-                            <file>${project.build.directory}${file.separator}servlet-tck${file.separator}artifacts${file.separator}servlet-tck-runtime-${jakarta.tck.servlet.version}.jar</file>
-                            <groupId>jakarta.tck</groupId>
-                            <artifactId>servlet-tck-runtime</artifactId>
-                            <version>${jakarta.tck.servlet.version}</version>
-                            <packaging>jar</packaging>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>install-servlet-tck-util</id>
-                        <phase>process-resources</phase>
-                        <goals>
-                            <goal>install-file</goal>
-                        </goals>
-                        <configuration>
-                            <file>${project.build.directory}${file.separator}servlet-tck${file.separator}artifacts${file.separator}servlet-tck-util-${jakarta.tck.servlet.version}.jar</file>
-                            <groupId>jakarta.tck</groupId>
-                            <artifactId>servlet-tck-util</artifactId>
-                            <version>${jakarta.tck.servlet.version}</version>
-                            <packaging>jar</packaging>
+                            <file>${project.build.directory}/${tck.test.servlet.file}</file>
+                            <groupId>${project.groupId}</groupId>
+                            <artifactId>${project.artifactId}</artifactId>
+                            <version>${project.version}</version>
+                            <packaging>zip</packaging>
                         </configuration>
                     </execution>
                 </executions>
