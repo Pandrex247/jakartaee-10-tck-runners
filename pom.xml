@@ -96,7 +96,6 @@
         <jakarta.tck.el.version>5.0.0</jakarta.tck.el.version>
         <jakarta.tck.websocket.version>2.1.0</jakarta.tck.websocket.version>
         <jakarta.tck.bean-validation.version>3.0.1</jakarta.tck.bean-validation.version>
-        <jakarta.tck.servlet.jsp-api.version>3.1.0</jakarta.tck.servlet.jsp-api.version>
         <jakarta.tck.pages.version>3.1.0</jakarta.tck.pages.version>
         <jakarta.tck.persistence.version>3.1.6</jakarta.tck.persistence.version>
         <jakarta.tck.cdi.version>4.0.13</jakarta.tck.cdi.version>

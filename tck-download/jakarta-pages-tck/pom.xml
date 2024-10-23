@@ -50,63 +50,17 @@
                         <goals>
                             <goal>wget</goal>
                         </goals>
-                        <configuration>
-                            <url>${tck.test.pages.url}</url>
-                            <unpack>true</unpack>
-                            <outputDirectory>${project.build.directory}</outputDirectory>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>download-javatest-src</id>
-                        <phase>generate-sources</phase>
-                        <goals>
-                            <goal>wget</goal>
-                        </goals>
-                        <configuration>
-                            <url>${javatest.source.url}</url>
-                            <outputDirectory>${project.build.javatestSources}</outputDirectory>
-                            <unpack>true</unpack>
-                        </configuration>
                     </execution>
                 </executions>
-            </plugin>
-            <plugin>
-                <artifactId>maven-assembly-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>package-sources</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>single</goal>
-                        </goals>
-                        <configuration>
-                            <finalName>javatest</finalName>
-                            <descriptors>
-                                <descriptor>assembly${file.separator}sources.xml</descriptor>
-                            </descriptors>
-                        </configuration>
-                    </execution>
-                </executions>
+                <configuration>
+                    <url>${tck.test.pages.url}</url>
+                    <unpack>false</unpack>
+                    <outputDirectory>${project.build.directory}</outputDirectory>
+                </configuration>
             </plugin>
             <plugin>
                 <artifactId>maven-install-plugin</artifactId>
                 <executions>
-                    <execution>
-                        <id>install-javatest-as-5</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>install-file</goal>
-                        </goals>
-                        <configuration>
-                            <file>tck-download${file.separator}javatest${file.separator}javatest.jar</file>
-                            <sources>${project.build.directory}${file.separator}javatest-sources.jar</sources>
-                            <groupId>javatest</groupId>
-                            <artifactId>javatest</artifactId>
-                            <version>5.0</version>
-                            <packaging>jar</packaging>
-                            <generatePom>true</generatePom>
-                        </configuration>
-                    </execution>
                     <execution>
                         <id>install-pages-tck</id>
                         <phase>process-resources</phase>
@@ -114,13 +68,11 @@
                             <goal>install-file</goal>
                         </goals>
                         <configuration>
-                            <file>${project.build.directory}${file.separator}pages-tck${file.separator}artifacts${file.separator}jakarta-pages-tck-${jakarta.tck.pages.version}.jar</file>
-                            <sources>${project.build.directory}${file.separator}pages-tck${file.separator}artifacts${file.separator}jakarta-pages-tck-${jakarta.tck.pages.version}-sources.jar</sources>
-                            <groupId>jakarta.tck</groupId>
-                            <artifactId>jakarta-pages-tck</artifactId>
-                            <version>${jakarta.tck.pages.version}</version>
-                            <packaging>jar</packaging>
-                            <generatePom>true</generatePom>
+                            <file>${project.build.directory}/${tck.test.pages.file}</file>
+                            <groupId>${project.groupId}</groupId>
+                            <artifactId>${project.artifactId}</artifactId>
+                            <version>${project.version}</version>
+                            <packaging>zip</packaging>
                         </configuration>
                     </execution>
                 </executions>
