@@ -92,7 +92,6 @@
         <jakarta-authorization-tck.version>2.1.0</jakarta-authorization-tck.version>
         <jakarta-rest-tck.version>3.1.5</jakarta-rest-tck.version>
         <jakarta.tck.sigtest-maven-plugin.version>2.2</jakarta.tck.sigtest-maven-plugin.version>
-        <jakarta.tck.el.version>5.0.0</jakarta.tck.el.version>
         <jakarta.tck.websocket.version>2.1.0</jakarta.tck.websocket.version>
         <jakarta.tck.bean-validation.version>3.0.1</jakarta.tck.bean-validation.version>
         <jakarta.tck.pages.version>3.1.0</jakarta.tck.pages.version>
@@ -140,7 +139,6 @@
         <module>tags-tck</module>
         <module>websocket-tck</module>
         <module>summarizer</module>
-        <module>expression-language-tck</module>
         <module>bean-validation-tck</module>
     </modules>
 
