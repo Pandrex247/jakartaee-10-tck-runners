@@ -34,7 +34,7 @@
 
     <properties>
         <tck.test.persistence.file>jakarta-persistence-tck-${jakarta.tck.persistence.version}.zip</tck.test.persistence.file>
-        <tck.tests.persistence.url>https://download.eclipse.org/jakartaee/persistence/3.2/${tck.test.persistence.file}</tck.tests.persistence.url>
+        <tck.tests.persistence.url>https://download.eclipse.org/jakartaee/persistence/3.1/${tck.test.persistence.file}</tck.tests.persistence.url>
     </properties>
 
     <build>

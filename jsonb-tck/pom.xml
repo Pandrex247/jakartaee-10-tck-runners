@@ -72,7 +72,7 @@
         <!-- hidden runtime dependencies of arquillian container -->
         <dependency>
             <groupId>fish.payara.arquillian</groupId>
-            <artifactId>payara-client-ee11</artifactId>
+            <artifactId>payara-client-ee9</artifactId>
             <scope>test</scope>
         </dependency>
         <dependency>

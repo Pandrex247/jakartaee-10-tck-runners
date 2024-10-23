@@ -57,7 +57,7 @@
 
     <properties>
         <tck.test.expression-language.file>jakarta-expression-language-tck-${tck.test.expression-language.version}.zip</tck.test.expression-language.file>
-        <tck.test.expression-language.url>https://download.eclipse.org/jakartaee/expression-language/6.0/${tck.test.expression-language.file}</tck.test.expression-language.url>
+        <tck.test.expression-language.url>https://download.eclipse.org/jakartaee/expression-language/5.0/${tck.test.expression-language.file}</tck.test.expression-language.url>
         <tck.test.expression-language.version>${jakarta.tck.el.version}</tck.test.expression-language.version>
     </properties>
 

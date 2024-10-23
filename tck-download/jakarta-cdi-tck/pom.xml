@@ -16,7 +16,7 @@
     <name>TCK: Install Jakarta CDI TCK</name>
 
     <properties>
-        <tck.tests.cdi.url>https://download.eclipse.org/jakartaee/cdi/4.1/cdi-tck-${jakarta.tck.cdi.version}-dist.zip</tck.tests.cdi.url>
+        <tck.tests.cdi.url>https://download.eclipse.org/jakartaee/cdi/4.0/cdi-tck-${jakarta.tck.cdi.version}-dist.zip</tck.tests.cdi.url>
     </properties>
 
     <build>

@@ -49,25 +49,25 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <maven.compiler.source>21</maven.compiler.source>
-        <maven.compiler.target>21</maven.compiler.target>
-        <maven.compiler.release>21</maven.compiler.release>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.release>11</maven.compiler.release>
 
-        <jdk.version>21</jdk.version>
+        <jdk.version>11</jdk.version>
 
         <ant.version>1.10.14</ant.version>
         <ant.home>${project.build.directory}/apache-ant-${ant.version}</ant.home>
         <ant.zip.url>https://archive.apache.org/dist/ant/binaries/apache-ant-${ant.version}-bin.zip</ant.zip.url>
         <ant.executable>${ant.home}${file.separator}bin${file.separator}ant</ant.executable>
 
-        <payara.home>${maven.multiModuleProjectDirectory}${file.separator}target${file.separator}payara7</payara.home>
+        <payara.home>${maven.multiModuleProjectDirectory}${file.separator}target${file.separator}payara6</payara.home>
         <!-- Note that Shrinkwrap Maven resolver WILL NOT read in whatever you specify on the command line - it will ALWAYS read this as-is -->
-        <payara.version>7.2024.1.Alpha2-SNAPSHOT</payara.version>
+        <payara.version>6.2024.11-SNAPSHOT</payara.version>
         <script.extension/>
         <payara.asadmin>${payara.home}${file.separator}glassfish${file.separator}bin${file.separator}asadmin${script.extension}</payara.asadmin>
         <payara.artifact>payara</payara.artifact>
         <payara.domain>domain1</payara.domain>
-        <payara.arquillian.version>4.0.alpha1</payara.arquillian.version>
+        <payara.arquillian.version>3.1</payara.arquillian.version>
         <skipTests>false</skipTests>
         <skipConfig>${skipTests}</skipConfig>
         <skipServerStartStop>${skipTests}</skipServerStartStop>
@@ -89,22 +89,20 @@
         <shrinkwrap.descriptors.version>2.0.0</shrinkwrap.descriptors.version>
 
         <!-- Jakarta EE versions -->
-        <jakarta-annotations-tck.version>3.0.0</jakarta-annotations-tck.version>
-        <jakarta-authorization-tck.version>3.0.0</jakarta-authorization-tck.version>
-        <jakarta-rest-tck.version>4.0.0</jakarta-rest-tck.version>
+        <jakarta-annotations-tck.version>2.1.1</jakarta-annotations-tck.version>
+        <jakarta-authorization-tck.version>2.1.0</jakarta-authorization-tck.version>
+        <jakarta-rest-tck.version>3.1.5</jakarta-rest-tck.version>
         <jakarta.tck.sigtest-maven-plugin.version>2.2</jakarta.tck.sigtest-maven-plugin.version>
-        <jakarta.tck.el.version>6.0.0</jakarta.tck.el.version>
-        <jakarta.tck.websocket.version>2.2.0</jakarta.tck.websocket.version>
-        <jakarta.tck.bean-validation.version>3.1.1</jakarta.tck.bean-validation.version>
-        <jakarta.tck.servlet.jsp-api.version>4.0.0</jakarta.tck.servlet.jsp-api.version>
-        <jakarta.tck.pages.version>4.0.0</jakarta.tck.pages.version>
-        <jakarta.tck.common.version>11.0.0-M1</jakarta.tck.common.version>
-        <jakarta.tck.signaturetest.version>11.0.0-M1</jakarta.tck.signaturetest.version>
-        <jakarta.tck.persistence.version>3.2.0</jakarta.tck.persistence.version>
-        <jakarta.tck.cdi.version>4.1.0</jakarta.tck.cdi.version>
+        <jakarta.tck.el.version>5.0.0</jakarta.tck.el.version>
+        <jakarta.tck.websocket.version>2.1.0</jakarta.tck.websocket.version>
+        <jakarta.tck.bean-validation.version>3.0.1</jakarta.tck.bean-validation.version>
+        <jakarta.tck.servlet.jsp-api.version>3.1.0</jakarta.tck.servlet.jsp-api.version>
+        <jakarta.tck.pages.version>3.1.0</jakarta.tck.pages.version>
+        <jakarta.tck.persistence.version>3.1.6</jakarta.tck.persistence.version>
+        <jakarta.tck.cdi.version>4.0.13</jakarta.tck.cdi.version>
         <cdi.api.version>4.1.0</cdi.api.version>
-        <jakarta.tck.servlet.version>6.1.0</jakarta.tck.servlet.version>
-        <jakarta.tck.concurrency.version>3.1.1</jakarta.tck.concurrency.version>
+        <jakarta.tck.servlet.version>6.0.2</jakarta.tck.servlet.version>
+        <jakarta.tck.concurrency.version>3.0.4</jakarta.tck.concurrency.version>
         <jakarta.tck.jsonp.version>2.1.1</jakarta.tck.jsonp.version>
         <jakarta.tck.jsonb.version>3.0.0</jakarta.tck.jsonb.version>
         <jakarta.tck.batch.version>2.1.5</jakarta.tck.batch.version>

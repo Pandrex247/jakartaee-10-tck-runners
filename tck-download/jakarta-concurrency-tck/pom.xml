@@ -16,7 +16,7 @@
     <name>TCK: Install Jakarta Concurrency TCK</name>
 
     <properties>
-        <tck.tests.concurrency.url>https://download.eclipse.org/jakartaee/concurrency/3.1/concurrency-tck-${jakarta.tck.concurrency.version}.zip</tck.tests.concurrency.url>
+        <tck.tests.concurrency.url>https://download.eclipse.org/jakartaee/concurrency/3.0/concurrency-tck-${jakarta.tck.concurrency.version}.zip</tck.tests.concurrency.url>
     </properties>
 
     <build>

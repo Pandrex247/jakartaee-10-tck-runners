@@ -57,7 +57,7 @@
     <name>TCK: Install Jakarta Annotations TCK</name>
 
     <properties>
-        <tck.download.url>https://download.eclipse.org/jakartaee/annotations/3.0/jakarta-annotations-tck-${jakarta-annotations-tck.version}.zip</tck.download.url>
+        <tck.download.url>https://download.eclipse.org/jakartaee/annotations/2.1/jakarta-annotations-tck-${jakarta-annotations-tck.version}.zip</tck.download.url>
     </properties>
 
     <build>
