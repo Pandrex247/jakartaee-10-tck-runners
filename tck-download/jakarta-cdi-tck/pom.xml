@@ -131,13 +131,44 @@
                         </configuration>
                     </execution>
                     <execution>
+                        <id>install-cdi-tck-web-impl</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>install-file</goal>
+                        </goals>
+                        <configuration>
+                            <file>${project.build.directory}${file.separator}cdi-tck-${jakarta.tck.cdi.version}${file.separator}artifacts${file.separator}cdi-tck-web-impl-${jakarta.tck.cdi.version}.jar</file>
+                            <groupId>jakarta.enterprise</groupId>
+                            <artifactId>cdi-tck-web-impl</artifactId>
+                            <version>${jakarta.tck.cdi.version}</version>
+                            <packaging>jar</packaging>
+                            <sources>${project.build.directory}${file.separator}cdi-tck-${jakarta.tck.cdi.version}${file.separator}artifacts${file.separator}cdi-tck-web-impl-${jakarta.tck.cdi.version}-sources.jar</sources>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>install-cdi-tck-web-impl-suite</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>install-file</goal>
+                        </goals>
+                        <configuration>
+                            <file>${project.build.directory}${file.separator}cdi-tck-${jakarta.tck.cdi.version}${file.separator}artifacts${file.separator}cdi-tck-web-impl-${jakarta.tck.cdi.version}-suite.xml</file>
+                            <groupId>jakarta.enterprise</groupId>
+                            <artifactId>cdi-tck-web-impl</artifactId>
+                            <version>${jakarta.tck.cdi.version}</version>
+                            <packaging>xml</packaging>
+                            <classifier>suite</classifier>
+                            <generatePom>false</generatePom>
+                        </configuration>
+                    </execution>
+                    <execution>
                         <id>install-cdi-tck-core-impl-sigtest</id>
                         <phase>process-resources</phase>
                         <goals>
                             <goal>install-file</goal>
                         </goals>
                         <configuration>
-                            <file>${project.build.directory}${file.separator}cdi-tck-${jakarta.tck.cdi.version}${file.separator}artifacts${file.separator}cdi-tck-core-impl-${jakarta.tck.cdi.version}-sigtest-jdk17.sig</file>
+                            <file>${project.build.directory}${file.separator}cdi-tck-${jakarta.tck.cdi.version}${file.separator}artifacts${file.separator}cdi-tck-core-impl-${jakarta.tck.cdi.version}-sigtest-jdk11.sig</file>
                             <groupId>jakarta.enterprise</groupId>
                             <artifactId>cdi-tck-core-impl</artifactId>
                             <version>${jakarta.tck.cdi.version}</version>
