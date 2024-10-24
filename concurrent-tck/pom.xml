@@ -276,19 +276,8 @@
                             <goal>test</goal>
                         </goals>
                         <configuration>
-                            <systemPropertyVariables>
-                                <jimage.dir>${jimage.dir}</jimage.dir>
-                                <payara.home>${payara.home}</payara.home>
-                            </systemPropertyVariables>
-                            <groups>${concurrent-tck-groups}</groups>
-                            <!-- For debugging, include only subset of tests: -->
-                            <!-- <includes>
-                                <include>ee.jakarta.tck.concurrent.spec.signature.*Tests</include>
-                             </includes> -->
+                            <suiteXmlFiles>${tck-suite.xml}</suiteXmlFiles>
                             <testSourceDirectory>${project.basedir}${file.separarator}src${file.separarator}main${file.separarator}java${file.separarator}</testSourceDirectory>
-                            <dependenciesToScan>
-                                <dependency>jakarta.enterprise.concurrent:jakarta.enterprise.concurrent-tck</dependency>
-                            </dependenciesToScan>
                         </configuration>
                     </execution>
                 </executions>
