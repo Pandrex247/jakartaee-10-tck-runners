@@ -53,17 +53,8 @@
     </parent>
 
     <properties>
-        <concurrent-tck-groups>platform</concurrent-tck-groups> <!-- Groups to include i.e. web/platform, given by the tck-->
-
+        <com.beust-jcommander.version>1.82</com.beust-jcommander.version>
         <tck-suite.xml>src${file.separator}test${file.separator}resources${file.separator}tck-suite.xml</tck-suite.xml>
-
-        <!-- Override parent version. We require 2.3, which breaks many other TCKs -->
-        <jakarta.tck.sigtest-maven-plugin.version>2.3</jakarta.tck.sigtest-maven-plugin.version>
-
-
-        <jimage.dir>${project.build.outputDirectory}${file.separator}jimage</jimage.dir>
-        <!-- CLI override property workaround for Windows because of how the create-system-properties command parses ':' and '\' -->
-        <jimage.dir.escaped>${jimage.dir}</jimage.dir.escaped>
     </properties>
     
     <!-- The Arquillian test framework -->
@@ -104,16 +95,19 @@
         </dependency>
         <!-- Test frameworks -->
         <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>6.14.3</version>
         </dependency>
         <dependency>
-            <groupId>org.junit.platform</groupId>
-            <artifactId>junit-platform-launcher</artifactId>
+            <groupId>org.jboss.arquillian.testng</groupId>
+            <artifactId>arquillian-testng-container</artifactId>
+            <!--            <scope>compile</scope>-->
         </dependency>
         <dependency>
-            <groupId>org.jboss.arquillian.junit5</groupId>
-            <artifactId>arquillian-junit5-container</artifactId>
+            <groupId>com.beust</groupId>
+            <artifactId>jcommander</artifactId>
+            <version>${com.beust-jcommander.version}</version>
         </dependency>
         
         <dependency>
@@ -174,6 +168,11 @@
                             <artifactId>derbyshared</artifactId>
                             <version>10.15.2.0</version>
                         </artifactItem>
+                        <dependency>
+                            <groupId>org.netbeans.tools</groupId>
+                            <artifactId>sigtest-maven-plugin</artifactId>
+                            <version>${sigtest-maven-plugin.version}</version>
+                        </dependency>
                     </artifactItems>
                     <outputDirectory>${payara.home}${file.separator}glassfish${file.separator}domains${file.separator}domain1${file.separator}lib</outputDirectory>
                 </configuration>
@@ -276,6 +275,9 @@
                             <goal>test</goal>
                         </goals>
                         <configuration>
+                            <systemPropertyVariables>
+                                <payara.home>${payara.home}</payara.home>
+                            </systemPropertyVariables>
                             <suiteXmlFiles>
                                 <suiteXmlFile>${tck-suite.xml}</suiteXmlFile>
                             </suiteXmlFiles>
