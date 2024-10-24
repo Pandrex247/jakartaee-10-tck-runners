@@ -260,11 +260,11 @@
                                         <arg value="start-domain"/>
                                     </exec>
                                 </limit>
-                                <exec executable="${ant.home}/bin/ant" dir="${tck.home}/bin">
+                                <exec executable="${ant.executable}" dir="${tck.home}/bin">
                                     <arg value="config.vi" />
                                     <env key="tck.home" value="${tck.home}"/>
                                 </exec>
-                                <exec executable="${ant.home}/bin/ant" dir="${tck.home}/bin">
+                                <exec executable="${ant.executable}" dir="${tck.home}/bin">
                                     <arg value="enable.jacc"  />
                                     <env key="tck.home" value="${tck.home}"/>
                                 </exec>
@@ -295,7 +295,7 @@
                                          classpathref="maven.plugin.classpath" />
 
                                 <echo level="info" message="Start running all tests" />
-                                <exec executable="${ant.home}/bin/ant" dir="${tck.tests.home}" resultproperty="testResult">
+                                <exec executable="${ant.executable}" dir="${tck.tests.home}" resultproperty="testResult">
                                     <arg value="-Dmultiple.tests=${run.test}" if:set="run.test" />
                                     <arg value="deploy"/>
                                     <arg value="run.all" unless:set="run.test"/>
