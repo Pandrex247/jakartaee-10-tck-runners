@@ -139,7 +139,6 @@
         <module>tags-tck</module>
         <module>websocket-tck</module>
         <module>summarizer</module>
-        <module>bean-validation-tck</module>
     </modules>
 
     <dependencyManagement>
