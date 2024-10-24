@@ -97,7 +97,7 @@
         <jakarta.tck.cdi.version>4.0.13</jakarta.tck.cdi.version>
         <cdi.api.version>4.0.1</cdi.api.version>
         <jakarta.tck.servlet.version>6.0.2</jakarta.tck.servlet.version>
-        <jakarta.tck.concurrency.version>3.0.4</jakarta.tck.concurrency.version>
+        <jakarta.tck.concurrency.version>3.0.2</jakarta.tck.concurrency.version>
         <jakarta.tck.jsonp.version>2.1.1</jakarta.tck.jsonp.version>
         <jakarta.tck.jsonb.version>3.0.0</jakarta.tck.jsonb.version>
         <jakarta.tck.batch.version>2.1.5</jakarta.tck.batch.version>
