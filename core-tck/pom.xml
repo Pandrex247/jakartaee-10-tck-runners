@@ -175,6 +175,7 @@
                     </dependenciesToScan>
                     <redirectTestOutputToFile>true</redirectTestOutputToFile>
                     <systemPropertyVariables>
+                        <payara.home>${payara.home}</payara.home>
                         <arquillian.launch>payara-core-profile</arquillian.launch>
                     </systemPropertyVariables>
                 </configuration>
