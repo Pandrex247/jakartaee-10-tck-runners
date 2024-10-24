@@ -272,7 +272,7 @@
                             <rules>
                                 <requireJavaVersion>
                                     <version>[${jdk.version},)</version>
-                                    <message>You need at least JDK21</message>
+                                    <message>You need at least JDK11</message>
                                 </requireJavaVersion>
                             </rules>
                         </configuration>
