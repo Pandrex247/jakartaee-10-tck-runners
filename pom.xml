@@ -87,11 +87,11 @@
         <jimage.dir>${project.build.directory}${file.separator}jdk-bundle</jimage.dir>
         <shrinkwrap.resolver.version>3.3.0</shrinkwrap.resolver.version>
         <shrinkwrap.descriptors.version>2.0.0</shrinkwrap.descriptors.version>
+        <sigtest-maven-plugin.version>1.6</sigtest-maven-plugin.version>
 
         <!-- Jakarta EE versions -->
         <jakarta-authorization-tck.version>2.1.0</jakarta-authorization-tck.version>
         <jakarta-rest-tck.version>3.1.5</jakarta-rest-tck.version>
-        <jakarta.tck.sigtest-maven-plugin.version>2.2</jakarta.tck.sigtest-maven-plugin.version>
         <jakarta.tck.websocket.version>2.1.0</jakarta.tck.websocket.version>
         <jakarta.tck.pages.version>3.1.0</jakarta.tck.pages.version>
         <jakarta.tck.cdi.version>4.0.13</jakarta.tck.cdi.version>
@@ -173,9 +173,9 @@
             </dependency>
 
             <dependency>
-                <groupId>jakarta.tck</groupId>
+                <groupId>org.netbeans.tools</groupId>
                 <artifactId>sigtest-maven-plugin</artifactId>
-                <version>${jakarta.tck.sigtest-maven-plugin.version}</version>
+                <version>${sigtest-maven-plugin.version}</version>
                 <scope>test</scope>
             </dependency>
 
@@ -251,9 +251,9 @@
                 </plugin>
 
                 <plugin>
-                    <groupId>jakarta.tck</groupId>
+                    <groupId>org.netbeans.tools</groupId>
                     <artifactId>sigtest-maven-plugin</artifactId>
-                    <version>${jakarta.tck.sigtest-maven-plugin.version}</version>
+                    <version>${sigtest-maven-plugin.version}</version>
                 </plugin>
             </plugins>
         </pluginManagement>

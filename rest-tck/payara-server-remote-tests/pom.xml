@@ -95,7 +95,7 @@
         </dependency>
 
         <dependency>
-            <groupId>jakarta.tck</groupId>
+            <groupId>org.netbeans.tools</groupId>
             <artifactId>sigtest-maven-plugin</artifactId>
         </dependency>
         

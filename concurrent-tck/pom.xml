@@ -162,17 +162,17 @@
                         <artifactItem>
                             <groupId>org.apache.derby</groupId>
                             <artifactId>derby</artifactId>
-                            <version>10.17.1.0</version>
+                            <version>10.15.2.0</version>
                         </artifactItem>
                         <artifactItem>
                             <groupId>org.apache.derby</groupId>
                             <artifactId>derbytools</artifactId>
-                            <version>10.17.1.0</version>
+                            <version>10.15.2.0</version>
                         </artifactItem>
                         <artifactItem>
                             <groupId>org.apache.derby</groupId>
                             <artifactId>derbyshared</artifactId>
-                            <version>10.17.1.0</version>
+                            <version>10.15.2.0</version>
                         </artifactItem>
                     </artifactItems>
                     <outputDirectory>${payara.home}${file.separator}glassfish${file.separator}domains${file.separator}domain1${file.separator}lib</outputDirectory>
