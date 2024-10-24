@@ -48,7 +48,7 @@
                             <goal>install-file</goal>
                         </goals>
                         <configuration>
-                            <file>${project.build.directory}${file.separator}concurrency-tck-${jakarta.tck.concurrency.version}${file.separator}artifacts${file.separator}jakarta.enterprise.concurrent-parent-${jakarta.tck.concurrency.version}.pom</file>
+                            <file>${project.build.directory}${file.separator}concurrency-tck-${jakarta.tck.concurrency.version}${file.separator}artifacts${file.separator}jakarta.enterprise.concurrent.parent-${jakarta.tck.concurrency.version}.pom</file>
                             <groupId>jakarta.enterprise.concurrent</groupId>
                             <artifactId>jakarta.enterprise.concurrent.parent</artifactId>
                             <version>${jakarta.tck.concurrency.version}</version>
