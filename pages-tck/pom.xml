@@ -250,14 +250,14 @@
                                     <dirname property="test.dir" file="${tck.home}/src/${run.test}"/>
                                     <echo>Deploying from ${test.dir}</echo>
 
-                                    <exec executable="${ant.home}/bin/ant" dir="${test.dir}">
+                                    <exec executable="${ant.executable}" dir="${test.dir}">
                                         <arg value="deploy"  />
                                     </exec>
                                 </sequential>
 
                                 <!-- Deploy all tests -->
                                 <sequential unless:set="run.test" >
-                                    <exec executable="${ant.home}/bin/ant" dir="${tck.tests.home}">
+                                    <exec executable="${ant.executable}" dir="${tck.tests.home}">
                                         <arg value="deploy.all"  />
                                     </exec>
                                 </sequential>
@@ -276,7 +276,7 @@
                                 <taskdef resource="net/sf/antcontrib/antcontrib.properties" classpathref="maven.plugin.classpath" />
 
                                 <echo level="info" message="Start running all tests" />
-                                <exec executable="${ant.home}/bin/ant" dir="${tck.tests.home}" resultproperty="testResult">
+                                <exec executable="${ant.executable}" dir="${tck.tests.home}" resultproperty="testResult">
                                     <arg value="-Dmultiple.tests=${run.test}" if:set="run.test" />
                                     <arg value="run.all" unless:set="run.test"/>
                                     <arg value="runclient" if:set="run.test" />
