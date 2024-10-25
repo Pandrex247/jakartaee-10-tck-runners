@@ -93,6 +93,7 @@
                         </goals>
                         <configuration>
                             <includeArtifactIds>jakarta-websocket-tck</includeArtifactIds>
+                            <outputDirectory>${project.build.directory}</outputDirectory>
                         </configuration>
                     </execution>
                 </executions>
