@@ -28,13 +28,6 @@
     <name>GlassFish: Jakarta EE Signature TCK Runner</name>
 
     <properties>
-        <glassfish.home>${glassfish.root}</glassfish.home>
-        <glassfish.root>${project.build.directory}/payara7</glassfish.root>
-        <glassfish.version>${payara.version}</glassfish.version>
-        <glassfish.version.main>8</glassfish.version.main>
-        <glassfish-artifact-id>glassfish</glassfish-artifact-id>
-
-
         <!-- Remnants from ancient TCK -->
         <webServerHost>localhost</webServerHost>
         <webServerPort>8080</webServerPort>
@@ -45,9 +38,6 @@
 
         <!-- Note that currently, this must have src as the first directory as it is hard-coded in the test -->
         <signature.file.dir>${base.tck.dir}/src</signature.file.dir>
-
-        <version.jakarta.tck>11.0.1</version.jakarta.tck>
-        <version.jakarta.tck.sigtest-maven-plugin>2.6</version.jakarta.tck.sigtest-maven-plugin>
     </properties>
 
     <!-- Import the tck relevant boms -->
@@ -84,7 +74,6 @@
         <dependency>
             <groupId>jakarta.tck</groupId>
             <artifactId>sigtest-maven-plugin</artifactId>
-            <version>${version.jakarta.tck.sigtest-maven-plugin}</version>
         </dependency>
 
         <!-- Jakarta TCK tools dependencies -->
@@ -112,12 +101,6 @@
             <artifactId>arquillian-junit5-container</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.omnifaces.arquillian</groupId>
-            <artifactId>arquillian-glassfish-server-managed</artifactId>
-            <version>1.8</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
             <groupId>org.jboss.shrinkwrap</groupId>
             <artifactId>shrinkwrap-api</artifactId>
         </dependency>
@@ -137,36 +120,8 @@
         </testResources>
 
         <plugins>
-
-
-
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>exec-maven-plugin</artifactId>
-                <version>${exec-maven-plugin.version}</version>
-                <executions>
-                    <execution>
-                        <id>start-payara-server-for-config</id>
-                        <phase>pre-integration-test</phase>
-                        <goals>
-                            <goal>exec</goal>
-                        </goals>
-                        <inherited>false</inherited>
-                        <configuration>
-                            <skip>${skipServerStartStop}</skip>
-                            <executable>${payara.asadmin}</executable>
-                            <arguments>
-                                <argument>start-domain</argument>
-                            </arguments>
-                        </configuration>
-                    </execution>
-
-                </executions>
-            </plugin>
-
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.14.0</version>
                 <configuration>
                     <release>17</release>
                 </configuration>
@@ -174,45 +129,9 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
-                <version>3.8.1</version>
-
-
-
                 <executions>
                     <execution>
-                        <id>001-unpack</id>
-                        <goals>
-                            <goal>unpack</goal>
-                        </goals>
-                        <phase>generate-resources</phase>
-<!--                        <configuration>-->
-<!--                            <artifactItems>-->
-<!--                                <artifactItem>-->
-<!--                                    <groupId>org.glassfish.main.distributions</groupId>-->
-<!--                                    <artifactId>${glassfish-artifact-id}</artifactId>-->
-<!--                                    <version>${glassfish.version}</version>-->
-<!--                                    <type>zip</type>-->
-<!--                                    <overWrite>false</overWrite>-->
-<!--                                    <outputDirectory>${project.build.directory}</outputDirectory>-->
-<!--                                </artifactItem>-->
-<!--                            </artifactItems>-->
-<!--                        </configuration>-->
-                        <configuration>
-                            <artifactItems>
-                                <artifactItem>
-                                    <groupId>fish.payara.distributions</groupId>
-                                    <artifactId>payara</artifactId>
-                                    <version>${glassfish.version}</version>
-                                    <type>zip</type>
-                                    <overWrite>true</overWrite>
-                                    <outputDirectory>${project.build.directory}</outputDirectory>
-                                </artifactItem>
-                            </artifactItems>
-                        </configuration>
-                    </execution>
-
-                    <execution>
-                        <id>003-copy-protocol-lib</id>
+                        <id>copy-protocol-lib</id>
                         <goals>
                             <goal>copy</goal>
                         </goals>
@@ -243,7 +162,7 @@
                                 <artifactItem>
                                     <groupId>jakarta.tck</groupId>
                                     <artifactId>signaturevalidation</artifactId>
-                                    <version>${version.jakarta.tck}</version>
+                                    <version>${jakarta.tck.platform.version}</version>
                                     <overWrite>true</overWrite>
                                     <outputDirectory>${base.tck.dir}</outputDirectory>
                                     <includes>**/sig-test.map,**/sig-test-pkg-list.txt</includes>
@@ -251,7 +170,7 @@
                                 <artifactItem>
                                     <groupId>jakarta.tck</groupId>
                                     <artifactId>signaturevalidation</artifactId>
-                                    <version>${version.jakarta.tck}</version>
+                                    <version>${jakarta.tck.platform.version}</version>
                                     <overWrite>true</overWrite>
                                     <outputDirectory>${signature.file.dir}</outputDirectory>
                                     <includes>**/*.sig</includes>
@@ -264,7 +183,6 @@
 
             <plugin>
                 <artifactId>maven-antrun-plugin</artifactId>
-                <version>3.1.0</version>
                 <executions>
                     <execution>
                         <id>configure-client-classpath</id>
@@ -276,7 +194,7 @@
                             <!-- Export the properties defined below so they can be used for the signature tests -->
                             <exportAntProperties>true</exportAntProperties>
                             <target>
-                                <fileset id="jakarta-api-jars" dir="${glassfish.home}/glassfish/modules/">
+                                <fileset id="jakarta-api-jars" dir="${payara.home}/glassfish/modules/">
                                     <!-- Jakarta API's needed on the test class path -->
                                     <include name="jakarta.*"/>
                                 </fileset>
@@ -291,7 +209,6 @@
 
             <plugin>
                 <artifactId>maven-failsafe-plugin</artifactId>
-                <version>3.5.2</version>
                 <configuration>
                     <dependenciesToScan>
                         <dependency>jakarta.tck:signaturevalidation</dependency>
@@ -317,7 +234,7 @@
                             </additionalClasspathElements>
 
                             <systemPropertyVariables>
-                                <glassfish.home>${glassfish.home}</glassfish.home>
+                                <payara.home>${payara.home}</payara.home>
                             </systemPropertyVariables>
                         </configuration>
                     </execution>
