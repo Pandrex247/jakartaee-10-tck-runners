@@ -479,7 +479,6 @@
                         <artifactId>maven-failsafe-plugin</artifactId>
                         <configuration>
                             <includes>
-                                <include>ee.jakarta.tck.persistence.core.**</include>
                                 <include>ee.jakarta.tck.persistence.core.annotations.**</include>
                                 <include>ee.jakarta.tck.persistence.core.basic.**</include>
                                 <include>ee.jakarta.tck.persistence.core.cache.basicTests.**</include>
