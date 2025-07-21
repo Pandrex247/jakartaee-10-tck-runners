@@ -385,7 +385,6 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>sql-maven-plugin</artifactId>
-                <!-- common configuration shared by all executions -->
                 <dependencies>
                     <dependency>
                         <groupId>org.apache.derby</groupId>
@@ -398,16 +397,6 @@
                         <version>${derby.version}</version>
                     </dependency>
                 </dependencies>
-                <configuration>
-                    <skip>${skipConfig}</skip>
-                    <driver>org.apache.derby.jdbc.ClientDriver</driver>
-                    <url>jdbc:derby://localhost:1527/derbyDB;create=true</url>
-                    <username>CTS1</username>
-                    <password>CTS1</password>
-                    <autocommit>true</autocommit>
-                    <delimiter>;</delimiter>
-                    <onError>continue</onError>
-                </configuration>
                 <executions>
                     <execution>
                         <id>sql-cli</id>
@@ -416,6 +405,14 @@
                         </goals>
                         <phase>pre-integration-test</phase>
                         <configuration>
+                            <skip>${skipConfig}</skip>
+                            <driver>org.apache.derby.jdbc.ClientDriver</driver>
+                            <url>jdbc:derby://localhost:1527/derbyDB;create=true</url>
+                            <username>CTS1</username>
+                            <password>CTS1</password>
+                            <autocommit>true</autocommit>
+                            <delimiter>;</delimiter>
+                            <onError>continue</onError>
                             <srcFiles>
                                 <srcFile>${project.build.directory}${file.separator}test-classes${file.separator}derby.sql</srcFile>
                             </srcFiles>
